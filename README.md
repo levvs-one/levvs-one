@@ -21,6 +21,14 @@ numerical contracts, and a reproducible six-wavelength prism example.
 
 `C#` · `.NET 8 / 10` · `MIT` · `no runtime dependencies`
 
+### [Handinpack](https://github.com/levvs-one/handinpack)
+
+A local Windows workbench for preparing files for handover. Preview the
+inventory, rename copies, check requirements, and create a folder or ZIP
+with readable contents and SHA-256 verification. Originals stay untouched.
+
+`C#` · `WPF` · `MIT` · `portable Windows release`
+
 ### [llms.txt snapshots](https://github.com/levvs-one/llms-txt-snapshots)
 
 Dated checks of `/llms.txt`, discovery links, and crawler directives across a
