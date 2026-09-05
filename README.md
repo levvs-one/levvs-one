@@ -8,11 +8,11 @@ Every release here ships with `SHA256SUMS.txt` and build steps you can rerun you
 
 | Project | What it does | Stack |
 |---|---|---|
-| [**Sora**](https://github.com/levvs-one/sora-client) | Proxy and VPN client for Windows 7 SP1 through 11, built on v2rayN 5.39. Per-subscription management, system proxy, latency checks, one codebase with per-version installer profiles. | C# · WPF · Inno Setup · GPL-3.0 |
-| [**Caustikon**](https://github.com/levvs-one/caustikon) | Allocation-free geometric optics for .NET: vector refraction, exact Fresnel reflectance, Cauchy and Sellmeier dispersion. Scalar and span APIs over caller-owned memory, .NET 8 and 10, no runtime dependencies. | C# · MIT |
-| [**Diptych**](https://github.com/levvs-one/diptych) | Before/after photo reports for site visits. Originals stay untouched, PDF images are re-encoded without EXIF/GPS, and the output bytes are hash-verified before handover. | C# · WPF · PDFium · MIT |
-| [**Carryall**](https://github.com/levvs-one/carryall) | File handover workbench: inventory, renamed copies, a folder or ZIP with a human-readable manifest, and SHA-256 verification of every written copy. | C# · WPF · MIT |
-| [**llms.txt snapshots**](https://github.com/levvs-one/llms-txt-snapshots) | Reproducible field study of `/llms.txt`, `robots.txt` and AI-agent discovery signals across 30 public origins. Dated runs, derived metadata, no republished response bodies. | Python · CC0 data · MIT code |
+| [**Sora**](https://github.com/levvs-one/sora-client) | Proxy and VPN client for Windows 7 SP1 through 11, built on v2rayN 5.39. Per-subscription management, system proxy, latency checks, one codebase with per-version installer profiles. | C#, WPF, Inno Setup, GPL-3.0 |
+| [**Caustikon**](https://github.com/levvs-one/caustikon) | Allocation-free geometric optics for .NET: vector refraction, exact Fresnel reflectance, Cauchy and Sellmeier dispersion. Scalar and span APIs over caller-owned memory, .NET 8 and 10, no runtime dependencies. | C#, MIT |
+| [**Diptych**](https://github.com/levvs-one/diptych) | Before/after photo reports for site visits. Originals stay untouched, PDF images are re-encoded without EXIF/GPS, and the output bytes are hash-verified before handover. | C#, WPF, PDFium, MIT |
+| [**Carryall**](https://github.com/levvs-one/carryall) | File handover workbench: inventory, renamed copies, a folder or ZIP with a human-readable manifest, and SHA-256 verification of every written copy. | C#, WPF, MIT |
+| [**llms.txt snapshots**](https://github.com/levvs-one/llms-txt-snapshots) | Reproducible field study of `/llms.txt`, `robots.txt` and AI-agent discovery signals across 30 public origins. Dated runs, derived metadata, no republished response bodies. | Python, CC0 data, MIT code |
 
 ## How I ship
 
@@ -23,4 +23,5 @@ Every release here ships with `SHA256SUMS.txt` and build steps you can rerun you
 
 ## Elsewhere
 
-[levvs.cc](https://levvs.cc) · [Telegram](https://t.me/levvs_one)
+- [levvs.cc](https://levvs.cc)
+- [Telegram](https://t.me/levvs_one)
