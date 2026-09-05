@@ -1,55 +1,26 @@
-# levvs-one
+# levvs
 
-I work on networking software, Windows desktop tools, and automation. I like
-plain code, explicit constraints, and releases that can be inspected without
-guesswork.
+Local-first Windows tools and networking software, mostly in C#. Most of my work is client projects that are not public; the repositories below are the part I can show.
 
-## Selected work
+Every release here ships with `SHA256SUMS.txt`, a pinned SDK in `global.json`, and build steps you can rerun yourself.
 
-### [Sora](https://github.com/levvs-one/sora-client)
+## Projects
 
-A Windows proxy and VPN client based on v2rayN 5.39, with support from Windows
-7 through Windows 11.
+| Project | What it does | Stack |
+|---|---|---|
+| [**Sora**](https://github.com/levvs-one/sora-client) | Proxy and VPN client for Windows 7 SP1 through 11, built on v2rayN 5.39. Per-subscription management, system proxy, latency checks, one codebase with per-version installer profiles. | C# · WPF · Inno Setup · GPL-3.0 |
+| [**Caustikon**](https://github.com/levvs-one/caustikon) | Allocation-free geometric optics for .NET: vector refraction, exact Fresnel reflectance, Cauchy and Sellmeier dispersion. Scalar and span APIs over caller-owned memory, .NET 8 and 10, no runtime dependencies. | C# · MIT |
+| [**Diptych**](https://github.com/levvs-one/diptych) | Before/after photo reports for site visits. Originals stay untouched, PDF images are re-encoded without EXIF/GPS, and the output bytes are hash-verified before handover. | C# · WPF · PDFium · MIT |
+| [**Carryall**](https://github.com/levvs-one/carryall) | File handover workbench: inventory, renamed copies, a folder or ZIP with a human-readable manifest, and SHA-256 verification of every written copy. | C# · WPF · MIT |
+| [**llms.txt snapshots**](https://github.com/levvs-one/llms-txt-snapshots) | Reproducible field study of `/llms.txt`, `robots.txt` and AI-agent discovery signals across 30 public origins. Dated runs, derived metadata, no republished response bodies. | Python · CC0 data · MIT code |
 
-`C#` · `PowerShell` · `Inno Setup` · `GPL-3.0`
+## How I ship
 
-### [Sidelight](https://github.com/levvs-one/sidelight)
+- CI runs on every push in every repository above.
+- Builds are not code-signed yet, so each release carries checksums and the exact commands that produced it.
+- Compatibility is a feature, not a legacy burden: Sora still targets Windows 7 SP1 on x86.
+- Originals are never modified by tools that touch user files.
 
-Geometric optics primitives for .NET: vector refraction, Fresnel reflectance,
-and wavelength-dependent refractive indices. Scalar and span APIs, explicit
-numerical contracts, and a reproducible six-wavelength prism example.
+## Elsewhere
 
-`C#` · `.NET 8 / 10` · `MIT` · `no runtime dependencies`
-
-### [Carryall](https://github.com/levvs-one/carryall)
-
-A local Windows workbench for preparing files for handover. Preview the
-inventory, rename copies, check requirements, and create a folder or ZIP
-with readable contents and SHA-256 verification. Originals stay untouched.
-
-`C#` · `WPF` · `MIT` · `portable Windows release`
-
-### [Diptych](https://github.com/levvs-one/diptych)
-
-Offline photo reports for site visits. Keep original images, arrange before/after
-pairs with written observations, review the generated PDF, and hand over its
-verified bytes. Includes Cyrillic fonts, recovery notes, and explicit size limits.
-
-`C#` · `WPF` · `PDFium` · `Windows 11 preview release`
-
-### [llms.txt snapshots](https://github.com/levvs-one/llms-txt-snapshots)
-
-Dated checks of `/llms.txt`, discovery links, and crawler directives across a
-fixed set of public web origins. Each run keeps the request outcomes, derived
-metadata, and a short report; response bodies are not republished.
-
-`Python` · `llms.txt` · `robots.txt` · `CC0-1.0 data` · `MIT code`
-
-## Working range
-
-- C#, Rust, TypeScript, Python, and PowerShell
-- desktop and networking software
-- automation and Telegram tooling
-- compatibility work and reproducible diagnostics
-
-_meow it is lifestyle_
+[levvs.cc](https://levvs.cc) · [Telegram](https://t.me/levvs_one)
