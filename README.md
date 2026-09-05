@@ -29,6 +29,14 @@ with readable contents and SHA-256 verification. Originals stay untouched.
 
 `C#` · `WPF` · `MIT` · `portable Windows release`
 
+### [Visitplate](https://github.com/levvs-one/visitplate)
+
+Offline photo reports for site visits. Keep original images, arrange before/after
+pairs with written observations, review the generated PDF, and hand over its
+verified bytes. Includes Cyrillic fonts, recovery notes, and explicit size limits.
+
+`C#` · `WPF` · `PDFium` · `Windows 11 preview release`
+
 ### [llms.txt snapshots](https://github.com/levvs-one/llms-txt-snapshots)
 
 Dated checks of `/llms.txt`, discovery links, and crawler directives across a
