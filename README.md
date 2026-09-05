@@ -2,7 +2,7 @@
 
 Local-first Windows tools and networking software, mostly in C#. Most of my work is client projects that are not public; the repositories below are the part I can show.
 
-Every release here ships with `SHA256SUMS.txt`, a pinned SDK in `global.json`, and build steps you can rerun yourself.
+Every release here ships with `SHA256SUMS.txt` and build steps you can rerun yourself.
 
 ## Projects
 
@@ -16,7 +16,7 @@ Every release here ships with `SHA256SUMS.txt`, a pinned SDK in `global.json`, a
 
 ## How I ship
 
-- CI runs on every push in every repository above.
+- CI runs on every push to main and every pull request in the repositories above.
 - Builds are not code-signed yet, so each release carries checksums and the exact commands that produced it.
 - Compatibility is a feature, not a legacy burden: Sora still targets Windows 7 SP1 on x86.
 - Originals are never modified by tools that touch user files.
