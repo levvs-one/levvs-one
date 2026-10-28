@@ -1,85 +1,192 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.png">
-  <img src="assets/header-light.png" width="100%" alt="levvs. I build Sora, an open VPN client for Windows and Linux, and optics and liquids for .NET and the GPU.">
-</picture>
+<pre>
+Independent Submission                                             levvs
+Request for Comments: 1                                     October 2026
+Category: Informational
 
-<br>
 
-<a href="https://github.com/levvs-one/sora">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/sora-dark.svg">
-    <img src="assets/sora-light.svg" width="100%" alt="Sora, my main project: an open VPN client for Windows and Linux. Engines: sing-box, Xray and mihomo. Protocols: VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC, WireGuard, AmneziaWG. Transports: REALITY and XHTTP. Kill switch on nftables or WFP. LAN sync over Noise_XX.">
-  </picture>
-</a>
+<b>                     What I Build and How I Ship It</b>
 
-<a href="https://github.com/levvs-one/sora/releases/latest">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/sora-screen-dark.png">
-    <img src="assets/sora-screen-light.png" width="100%" alt="Sora's main window: the servers of a subscription on the left, the connect button on the right.">
-  </picture>
-</a>
+<b>Abstract</b>
 
-<p align="center">
-  <a href="https://github.com/levvs-one/sora/releases/latest"><b>Download Sora</b></a>&emsp;&emsp;
-  <a href="https://github.com/levvs-one/sora/blob/main/docs/architecture.md">Architecture</a>&emsp;&emsp;
-  <a href="https://github.com/levvs-one/sora/blob/main/docs/security.md">Threat model</a>&emsp;&emsp;
-  <a href="https://t.me/sora_client">Telegram channel</a>
-</p>
+   I build Sora, an open VPN client for Windows and Linux, and smaller
+   things around networks, optics and files.  This memo lists the
+   public ones and the rules every release follows.
 
-<br>
+<b>Status of This Memo</b>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/label-network-dark.svg">
-  <img src="assets/label-network-light.svg" width="100%" alt="Network">
-</picture>
+   This memo is the profile of one developer.  It is not an Internet
+   Standard, and it is revised whenever something ships.
 
-<p>
-  <a href="https://github.com/levvs-one/traverce"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-traverce-dark.svg"><img src="assets/card-traverce-light.svg" width="49%" alt="Traverce: reach the services you need without a system VPN."></picture></a>
-  <a href="https://github.com/levvs-one/sora-legacy"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-sora-legacy-dark.svg"><img src="assets/card-sora-legacy-light.svg" width="49%" alt="Sora Legacy: Sora for Windows 7 SP1 to 11 on x86."></picture></a>
-</p>
+<b>Table of Contents</b>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/label-light-dark.svg">
-  <img src="assets/label-light-light.svg" width="100%" alt="Light and liquids">
-</picture>
+   1.  Sora . . . . . . . . . . . . . . . . . . . . . . . . . . . .    2
+   2.  Network  . . . . . . . . . . . . . . . . . . . . . . . . . .    3
+   3.  Light and Liquids  . . . . . . . . . . . . . . . . . . . . .    3
+   4.  Tools  . . . . . . . . . . . . . . . . . . . . . . . . . . .    3
+   5.  Security Considerations  . . . . . . . . . . . . . . . . . .    4
+   6.  References . . . . . . . . . . . . . . . . . . . . . . . . .    4
+   Author's Address . . . . . . . . . . . . . . . . . . . . . . . .    4
 
-<p>
-  <a href="https://caustikon.levvs.cc"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-caustikon-dark.svg"><img src="assets/card-caustikon-light.svg" width="49%" alt="Caustikon: real optical glass for design, games, 3D and .NET."></picture></a>
-  <a href="https://undine.levvs.cc"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-undine-dark.svg"><img src="assets/card-undine-light.svg" width="49%" alt="Undine: liquids for design, games, 3D and .NET."></picture></a>
-</p>
 
-<p align="center">
-  <sub>Both run in the browser: <a href="https://caustikon.levvs.cc">caustikon.levvs.cc</a> and <a href="https://undine.levvs.cc">undine.levvs.cc</a>. Source: <a href="https://github.com/levvs-one/caustikon">caustikon</a>, <a href="https://github.com/levvs-one/undine">undine</a>.</sub>
-</p>
+levvs                        Informational                      [Page 1]
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/label-tools-dark.svg">
-  <img src="assets/label-tools-light.svg" width="100%" alt="Tools">
-</picture>
+RFC 1                    What I Build and Ship              October 2026
 
-<p>
-  <a href="https://github.com/levvs-one/carryall"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-carryall-dark.svg"><img src="assets/card-carryall-light.svg" width="49%" alt="Carryall: prepare, verify and hand over files."></picture></a>
-  <a href="https://github.com/levvs-one/diptych"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-diptych-dark.svg"><img src="assets/card-diptych-light.svg" width="49%" alt="Diptych: before and after photo reports for site visits."></picture></a>
-</p>
 
-<p>
-  <a href="https://github.com/levvs-one/humanizer"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-humanizer-dark.svg"><img src="assets/card-humanizer-light.svg" width="49%" alt="Humanizer: one behaviour profile, compiled for ChatGPT, Claude, Gemini and their APIs."></picture></a>
-  <a href="https://github.com/levvs-one/llms-txt-snapshots"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-llms-txt-snapshots-dark.svg"><img src="assets/card-llms-txt-snapshots-light.svg" width="49%" alt="llms.txt snapshots: a reproducible field study of AI-agent discovery signals."></picture></a>
-</p>
+<b>1.  Sora</b>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/label-ship-dark.svg">
-  <img src="assets/label-ship-light.svg" width="100%" alt="How I ship">
-</picture>
+   Sora [<a href="https://github.com/levvs-one/sora">SORA</a>] is an open VPN client for Windows and Linux: paste a
+   subscription link, pick a server, connect.  It is my main project.
 
-- Release builds come with SHA-256 sums. Sora's install scripts and updater refuse a file that does not match.
-- Every public repository runs CI on push and on pull requests.
-- Nothing is code-signed yet, so the checksums and the build steps are the proof.
-- Sora and Traverce send no telemetry. Carryall and Diptych work offline and never change your originals.
-- Old systems count: Sora Legacy targets Windows 7 SP1 on x86.
+   The app never touches the network itself.  Everything that needs
+   privileges runs in sora-core, a Go service that the app drives
+   over gRPC.
 
-<br>
+      +-----------+   HTTP, localhost   +-----------+   Noise_XX
+      | Sora app  |--------------------&gt;| sora-sync |---&gt; your other
+      | Flutter   |                     +-----------+     computers
+      +-----+-----+
+            |
+            | gRPC, local socket or named pipe
+            v
+      +-----------+                     +--------------+
+      | sora-core |--------------------&gt;| kill switch  |
+      | Go        |                     | nftables/WFP |
+      +-----+-----+                     +--------------+
+            |
+      +-----+--------------+--------------------+
+      |                    |                    |
+  +---v------+        +----v-----+        +-----v----+
+  | sing-box |        |   Xray   |        |  mihomo  |
+  +---+------+        +----+-----+        +-----+----+
+      |                    |                    |
+      +--------------------+--------------------+
+                           |
+                           v
+               TUN adapter or system proxy
 
-<p><a href="https://t.me/levvs_one">Telegram</a></p>
+                  Figure 1: How the parts of Sora fit
 
-<sub>Every image here is built by <a href="tools/build.mjs"><code>tools/build.mjs</code></a>. The type is Instrument Serif, Instrument Sans and JetBrains Mono, set as outlines. The header is sunlight through 1.2 m of rippled water, traced per colour channel.</sub>
+   Engines      sing-box, Xray and mihomo, picked per connection.
+
+   Protocols    VLESS, VMess, Trojan, Shadowsocks, Hysteria2, TUIC,
+                WireGuard, AmneziaWG.  Transports REALITY and XHTTP.
+
+   Kill switch  nftables on Linux, WFP on Windows.  Strict mode keeps
+                traffic blocked after a crash, until you disconnect.
+
+   Sync         Between your computers on the LAN, paired by QR code
+                over Noise_XX.  No accounts, no cloud.
+
+   Extensions   A catalog of signed extensions.  Permissions are
+                confirmed when you install one.
+
+   Systems      Windows 10 1809 and later, Debian, Ubuntu, Fedora,
+                openSUSE, Arch.  Windows 7 SP1 to 11 on x86 run
+                Sora Legacy [<a href="https://github.com/levvs-one/sora-legacy">SORA-LEGACY</a>].
+
+
+levvs                        Informational                      [Page 2]
+
+RFC 1                    What I Build and Ship              October 2026
+
+
+<b>2.  Network</b>
+
+   Traverce [<a href="https://github.com/levvs-one/traverce">TRAVERCE</a>] reaches the services you need on Windows 10
+   and 11 without a system VPN.  Each service gets one mechanism, and
+   all other traffic goes direct:
+
+   o  zapret2 over WinDivert, for YouTube and Discord;
+
+   o  Smart DNS through NRPT rules, for ChatGPT, Gemini, Claude,
+      Copilot and Spotify;
+
+   o  a local MTProto-over-WebSocket proxy, for Telegram Desktop.
+
+<b>3.  Light and Liquids</b>
+
+   Caustikon [<a href="https://github.com/levvs-one/caustikon">CAUSTIKON</a>] is real optical glass for .NET: 1646 catalog
+   glasses and nine liquids with dispersion, absorption and colour,
+   every number cited.  It runs in the browser at <a href="https://caustikon.levvs.cc">caustikon.levvs.cc</a>.
+
+   Undine [<a href="https://github.com/levvs-one/undine">UNDINE</a>] is liquids on the GPU: a surface with the liquid's
+   own viscosity, light refracted per colour channel, and caustics
+   from refracted rays rather than a texture.  Shaders for WebGL,
+   Unity, Unreal and Godot.  The pool is live at <a href="https://undine.levvs.cc">undine.levvs.cc</a>.
+
+<b>4.  Tools</b>
+
+   Carryall [<a href="https://github.com/levvs-one/carryall">CARRYALL</a>]
+      Prepare, verify and hand over files: copies with a readable
+      manifest and SHA-256 for each, originals untouched.
+
+   Diptych [<a href="https://github.com/levvs-one/diptych">DIPTYCH</a>]
+      Before and after photo reports for site visits, with a PDF
+      checked byte for byte before handover.
+
+   Humanizer [<a href="https://github.com/levvs-one/humanizer">HUMANIZER</a>]
+      Describe once how an assistant should think and write, then
+      compile it for ChatGPT, Claude, Gemini and their APIs.  Alpha.
+
+   llms.txt snapshots [<a href="https://github.com/levvs-one/llms-txt-snapshots">LLMS-TXT</a>]
+      A reproducible field study of /llms.txt, robots.txt and the
+      signals AI agents use to discover a site.
+
+
+levvs                        Informational                      [Page 3]
+
+RFC 1                    What I Build and Ship              October 2026
+
+
+<b>5.  Security Considerations</b>
+
+   Release builds ship with SHA-256 sums.  Sora's install scripts and
+   its updater refuse any file whose sum does not match.
+
+   Nothing is code-signed yet.  Until it is, the checksums and the
+   build steps in each repository are the proof of what was built.
+
+   Sora and Traverce send no telemetry.  Carryall and Diptych work
+   offline and never modify the files they are given.
+
+   Every public repository runs CI on push and on pull requests.
+
+<b>6.  References</b>
+
+   [<a href="https://github.com/levvs-one/sora">SORA</a>]         levvs, "Sora", &lt;<a href="https://github.com/levvs-one/sora">https://github.com/levvs-one/sora</a>&gt;.
+
+   [<a href="https://github.com/levvs-one/sora-legacy">SORA-LEGACY</a>]  levvs, "Sora Legacy",
+                  &lt;<a href="https://github.com/levvs-one/sora-legacy">https://github.com/levvs-one/sora-legacy</a>&gt;.
+
+   [<a href="https://github.com/levvs-one/traverce">TRAVERCE</a>]     levvs, "Traverce",
+                  &lt;<a href="https://github.com/levvs-one/traverce">https://github.com/levvs-one/traverce</a>&gt;.
+
+   [<a href="https://github.com/levvs-one/caustikon">CAUSTIKON</a>]    levvs, "Caustikon",
+                  &lt;<a href="https://github.com/levvs-one/caustikon">https://github.com/levvs-one/caustikon</a>&gt;.
+
+   [<a href="https://github.com/levvs-one/undine">UNDINE</a>]       levvs, "Undine",
+                  &lt;<a href="https://github.com/levvs-one/undine">https://github.com/levvs-one/undine</a>&gt;.
+
+   [<a href="https://github.com/levvs-one/carryall">CARRYALL</a>]     levvs, "Carryall",
+                  &lt;<a href="https://github.com/levvs-one/carryall">https://github.com/levvs-one/carryall</a>&gt;.
+
+   [<a href="https://github.com/levvs-one/diptych">DIPTYCH</a>]      levvs, "Diptych",
+                  &lt;<a href="https://github.com/levvs-one/diptych">https://github.com/levvs-one/diptych</a>&gt;.
+
+   [<a href="https://github.com/levvs-one/humanizer">HUMANIZER</a>]    levvs, "Humanizer",
+                  &lt;<a href="https://github.com/levvs-one/humanizer">https://github.com/levvs-one/humanizer</a>&gt;.
+
+   [<a href="https://github.com/levvs-one/llms-txt-snapshots">LLMS-TXT</a>]     levvs, "llms.txt snapshots",
+                  &lt;<a href="https://github.com/levvs-one/llms-txt-snapshots">https://github.com/levvs-one/llms-txt-snapshots</a>&gt;.
+
+<b>Author's Address</b>
+
+   levvs
+
+   Telegram:  <a href="https://t.me/levvs_one">@levvs_one</a>
+   Sora news: <a href="https://t.me/sora_client">@sora_client</a>
+
+
+levvs                        Informational                      [Page 4]
+</pre>
