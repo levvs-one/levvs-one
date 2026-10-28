@@ -1,17 +1,28 @@
-I build **[Sora](https://github.com/levvs-one/sora)**, an open VPN client for Windows and Linux. One app over sing-box, Xray and mihomo, with REALITY, XHTTP, AmneziaWG and Hysteria2, a kill switch that holds through a crash, and sync between your computers without accounts or a cloud.
+<p align="center">
+  <samp>
+    building <a href="https://github.com/levvs-one/sora">sora</a>, an open vpn client on sing-box, xray and mihomo
+    <br/>
+    <a href="https://github.com/levvs-one/sora/releases/latest">download</a> .
+    <a href="https://github.com/levvs-one/sora/blob/main/docs/architecture.md">architecture</a> .
+    <a href="https://t.me/sora_client">channel</a> .
+    <a href="https://t.me/levvs_one">telegram</a>
+  </samp>
+</p>
 
-<p><a href="https://github.com/levvs-one/sora">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/levvs-one/sora/main/docs/images/home-1440x900-dark.png">
-    <img src="https://raw.githubusercontent.com/levvs-one/sora/main/docs/images/home-1440x900-light.png" width="100%" alt="Sora's main window: the servers of a subscription and the connect button">
-  </picture>
-</a></p>
-
-Smaller things: [Carryall](https://github.com/levvs-one/carryall) hands over files with a SHA-256 for every copy, [Diptych](https://github.com/levvs-one/diptych) turns site visits into before and after reports with a verified PDF, and [Humanizer](https://github.com/levvs-one/humanizer) compiles one assistant profile for ChatGPT, Claude and Gemini.
-
-<samp>
-  <a href="https://github.com/levvs-one/sora/releases/latest">download sora</a> |
-  <a href="https://github.com/levvs-one/sora-legacy">sora for windows 7</a> |
-  <a href="https://t.me/sora_client">sora channel</a> |
-  <a href="https://t.me/levvs_one">telegram</a>
-</samp>
+<table align="center">
+  <tr>
+    <th><samp>client</samp></th>
+    <th><samp>runs on</samp></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><samp><a href="https://github.com/levvs-one/sora">sora</a></samp></td>
+    <td><samp>windows 10, 11 x64<br/>debian, ubuntu, fedora, opensuse, arch</samp></td>
+    <td><samp><a href="https://github.com/levvs-one/sora/releases/latest">get</a></samp></td>
+  </tr>
+  <tr>
+    <td><samp><a href="https://github.com/levvs-one/sora-legacy">sora legacy</a></samp></td>
+    <td><samp>windows 7 sp1 to 11 x86<br/>android 4.4+<br/>linux, service and cli</samp></td>
+    <td><samp><a href="https://github.com/levvs-one/sora-legacy/releases/latest">get</a></samp></td>
+  </tr>
+</table>
