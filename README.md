@@ -38,9 +38,9 @@ RFC 1                    What I Build and Ship              October 2026
    Sora [<a href="https://github.com/levvs-one/sora">SORA</a>] is an open VPN client for Windows and Linux: paste a
    subscription link, pick a server, connect.  It is my main project.
 
-   The app never touches the network itself.  Everything that needs
-   privileges runs in sora-core, a Go service that the app drives
-   over gRPC.
+   The app does no privileged work itself.  sora-core, a Go service,
+   builds the engine config, brings up the tunnel and holds the
+   firewall rules; the app drives it over gRPC.
 
       +-----------+   HTTP, localhost   +-----------+   Noise_XX
       | Sora app  |--------------------&gt;| sora-sync |---&gt; your other
@@ -141,8 +141,9 @@ RFC 1                    What I Build and Ship              October 2026
 
 <b>5.  Security Considerations</b>
 
-   Release builds ship with SHA-256 sums.  Sora's install scripts and
-   its updater refuse any file whose sum does not match.
+   Releases of Sora, Sora Legacy, Traverce, Carryall and Diptych ship
+   with SHA-256 sums.  Sora's install scripts and its updater refuse
+   any file whose sum does not match.
 
    Nothing is code-signed yet.  Until it is, the checksums and the
    build steps in each repository are the proof of what was built.
@@ -150,7 +151,7 @@ RFC 1                    What I Build and Ship              October 2026
    Sora and Traverce send no telemetry.  Carryall and Diptych work
    offline and never modify the files they are given.
 
-   Every public repository runs CI on push and on pull requests.
+   Every project in this memo runs CI on push and on pull requests.
 
 <b>6.  References</b>
 
